@@ -43,7 +43,7 @@ If everything went right, your new app should have compiled and opened a new bro
 
 Since we are using Angular, a Google project, I think it is only fitting that we use Google's [Material Design framework](https://material.io/) to give our application some style. There are several options in that arena, but we will take a simple approach and just include the css framework [Materialize CSS](http://materializecss.com/) through a CDN. We can do this quite simply by adding a few lines to our `index.html`.
 
-```html(~/bloc/angular-todo/src/index.html)
+```html
 <!doctype html>
 <html lang="en">
 <head>
