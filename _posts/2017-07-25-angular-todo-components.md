@@ -69,7 +69,7 @@ We have to include jQuery because it is a dependency of the Materialize CSS fram
 
 Open up your newly created project and head into the `src` directory. We need to clean up some of the boilerplate code and setup a clean slate for our todo app. Navigate to `src/app/app.component.html` and replace the contents of that file with the following markup.
 
-```html(~/bloc/angular-todo/src/app/app.component.html)
+```html
 <div class="container">
   <h2 class="center-align">Bloc List</h2>
   <div class="row">
@@ -120,7 +120,7 @@ Lets take a look at what the CLI did for us. First, it created a new directory `
 
 Take a look at your `app.module.ts` and you will notice the new line under `declarations`.
 
-```typescript(~/bloc/angular-todo/src/app/app.module.ts)
+```typescript
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -147,7 +147,7 @@ Easy! We just include it in another component, in this case the `app-root` compo
 
 Head over to `src/app/app.component.ts` and lets switch out the todo html for our new component tag.
 
-```html(~/bloc/angular-todo/src/app/app.component.html)
+```html
 <div class="container">
   <h2 class="center-align">Bloc List</h2>
   <div class="row">
@@ -164,7 +164,7 @@ Head over to `src/app/app.component.ts` and lets switch out the todo html for ou
 
 Now lets take the markup for a todo and add it to `src/app/todo/todo.component.html`
 
-```html(~/bloc/angular-todo/src/app/todo/todo.component.html)
+```html
 +<p>
 +  <input type="checkbox" class="filled-in" id="filled-in-box" />
 +  <label for="filled-in-box">My Todo</label>
@@ -183,7 +183,7 @@ $ ng generate component todo-list
 
 This will create another directory located at `src/app/todo-list` containing our new component files. This component will be easy to implement in terms of markup. Soon, we will pass data to this component and dynamically set the number of todos, but for now let's just set up a few todos in here to see what it will look like. 
 
-```html(~/bloc/angular-todo/src/app/todo-list/todo-list.component.html)
+```html
 <app-todo></app-todo>
 <app-todo></app-todo>
 <app-todo></app-todo> 
@@ -191,7 +191,7 @@ This will create another directory located at `src/app/todo-list` containing our
 
 Next we have to include our new `app-todo-list` component in the `app-root` component.
 
-```html(~/bloc/angular-todo/src/app/app.component.html)
+```html
 <div class="container">
   <h2 class="center-align">Bloc List</h2>
   <div class="row">
@@ -226,7 +226,7 @@ installing service
 
 The bit that is important is `WARNING Service is generated but not provided, it must be provided to be used`. This means that, although the CLI provided us a nice boilerplate file for our service, it did not inject it for us. We have to do this manually, and the first step here is to head over to our module file at `src/app/app.module.ts`. We need to add an import statement that imports `TodoService` to the file and then we need to include it in our list of `providers` for our module.
 
-```typescript(~/bloc/angular-todo/src/app/app.module.ts)
+```typescript
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -255,7 +255,7 @@ Now let's take a look at the service file itself. You will notice that this is a
 
 Let's go ahead and add in some data.
 
-```typescript(~/bloc/angular-todo/src/app/todo.service.ts)
+```typescript
 import { Injectable } from '@angular/core';
 
 @Injectable()
@@ -330,7 +330,7 @@ First things first. We need to check our assumptions and confirm that there is i
 
 Change the markup for our `todo-list` component to just try to output the `todos` property we just setup.
 
-```html(~/bloc/angular-todo/src/app/todo-list/todo-list.component.html)
+```html
 +<pre>{{ todos }}</pre> // We use pre tags to keep any formatting the text already has
 -<app-todo></app-todo>
 -<app-todo></app-todo>
@@ -356,7 +356,7 @@ Boiled down to one sentence, this all means: We use a pipe when we want to trans
 
 All Right, we are almost there, I promise. Let's modify our `todo-list` component html file once more but this time use the  built in [`json` pipe](https://angular.io/api/common/JsonPipe) that comes with Angular.
 
-```html(~/bloc/angular-todo/src/app/todo-list/todo-list.component.html)
+```html
 +<pre>{{ todos|json }}</pre>
 -<pre>{{ todos }}</pre>
 ```
