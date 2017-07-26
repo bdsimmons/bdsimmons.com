@@ -331,7 +331,9 @@ First things first. We need to check our assumptions and confirm that there is i
 Change the markup for our `todo-list` component to just try to output the `todos` property we just setup.
 
 ```html
+{% raw %}
 +<pre>{{ todos }}</pre> // We use pre tags to keep any formatting the text already has
+{% endraw %}
 -<app-todo></app-todo>
 -<app-todo></app-todo>
 -<app-todo></app-todo> 
@@ -357,8 +359,10 @@ Boiled down to one sentence, this all means: We use a pipe when we want to trans
 All Right, we are almost there, I promise. Let's modify our `todo-list` component html file once more but this time use the  built in [`json` pipe](https://angular.io/api/common/JsonPipe) that comes with Angular.
 
 ```html
+{% raw %}
 +<pre>{{ todos|json }}</pre>
 -<pre>{{ todos }}</pre>
+{% endraw %}
 ```
 
 Now we should see some nicely formatted JSON in our browser window. It should look like this:
