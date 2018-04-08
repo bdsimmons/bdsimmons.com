@@ -15,16 +15,9 @@ categories:
 twitter_text: 'Angular Todo: Components - Angular 4 todo application built with CLI'
 ---
 
-## Overview and Purpose
+## Overview
 
 In this checkpoint we will build a basic todo application with Angular.
-
-## Objectives
-
-* Create a Todo Application with Angular
-* Evaluate ________
-* Analyze _________
-* Understand _________
 
 ## Setting up the Project
 
